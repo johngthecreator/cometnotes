@@ -5,13 +5,19 @@ import { CardContext } from '../CardContext';
 
 function Notepad() {
   const {cardData, setCardData} = useContext(CardContext);
-  const placeholder = JSON.parse(sessionStorage.getItem("cards"));
+  let defaultVal = "write something to get started...";
+  const placeholder = sessionStorage.getItem("cards");
+  if(placeholder){
+    if(JSON.parse(placeholder).length > 0){
+      defaultVal = JSON.parse(placeholder);
+    }
+  }
   return (
     <div>
      <Nav />
      <CodeMirror
       id="codemirror"
-      value={(placeholder.length > 0) ? placeholder:"write something to get started..."}
+      value={defaultVal}
       theme="dark"
       basicSetup={{
         lineNumbers:false
