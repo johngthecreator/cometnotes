@@ -1,0 +1,12 @@
+.ͼ1.cm-editor.cm-focused{
+  outline:none !important;
+}
+#root{
+  background-color: #282c34;
+}
+html, body {
+  background-color: #282c34;
+}
+#codemirror {
+  font-size: 18px;
+  }
